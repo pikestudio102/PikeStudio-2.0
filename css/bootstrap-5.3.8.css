@@ -12216,6 +12216,56 @@ textarea.form-control-lg {
     transform: translateY(-3px); /* Subtle lift effect */
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
+/* Footer Styling */
+.main-footer {
+    padding: 60px 0 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #eeeeee;
+}
 
+.footer-description {
+    color: #777;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-heading {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Footer Links */
+.main-footer ul li {
+    margin-bottom: 10px;
+}
+
+.main-footer a {
+    color: #777;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.main-footer a:hover {
+    color: #21a0aa; /* Teal hover to match your brand */
+}
+
+.footer-email {
+    font-size: 1.1rem;
+}
+
+/* Bottom Bar */
+.footer-divider {
+    margin: 40px 0 20px;
+    border-top: 1px solid #eeeeee;
+    opacity: 1;
+}
+
+.copyright {
+    color: #999;
+    font-size: 0.9rem;
+}
 
 /*# sourceMappingURL=bootstrap.css.map */
