@@ -12267,5 +12267,15 @@ textarea.form-control-lg {
     color: #999;
     font-size: 0.9rem;
 }
+/* Ensure the construction content starts below the fixed navbar */
+.construction-wrapper {
+    padding-top: 100px; /* Space for the navbar */
+    padding-bottom: 80px;
+    background-color: #fdfdfd;
+}
+
+.teal-text {
+    color: #21a0aa;
+}
 
 /*# sourceMappingURL=bootstrap.css.map */
