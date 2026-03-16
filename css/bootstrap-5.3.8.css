@@ -12278,4 +12278,25 @@ textarea.form-control-lg {
     color: #21a0aa;
 }
 
+/* This targets the 3 lines specifically */
+.navbar-toggler-icon {
+    filter: invert(51%) sepia(38%) saturate(958%) hue-rotate(136deg) brightness(91%) contrast(87%);
+}
+
+/* This targets the box around the lines */
+.navbar-toggler {
+    border: none !important;
+    padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none; /* Removes the default blue focus ring */
+}
+
+/* Ensures no weird outline appears when you tap it on your phone */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+}
 /*# sourceMappingURL=bootstrap.css.map */
