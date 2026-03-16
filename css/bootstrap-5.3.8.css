@@ -12300,22 +12300,18 @@ textarea.form-control-lg {
     box-shadow: none;
 }
 
-/* 1. DEFAULT STATE: The 3 Lines (when menu is closed) */
-/* Bootstrap adds the 'collapsed' class when the menu is shut */
-.navbar-toggler.collapsed .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(33, 160, 170, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-    transform: rotate(0deg);
-}
-
-/* 2. OPEN STATE: The X (when menu is open) */
-/* When the 'collapsed' class is REMOVED, show the X */
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(33, 160, 170, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 8l14 14M8 22L22 8'/%3e%3c/svg%3e") !important;
-    transform: rotate(90deg);
-}
-
-/* 3. Smooth Transition */
-.navbar-toggler-icon {
+/* 1. The Default State (3 Lines) */
+.navbar-toggler .navbar-toggler-icon {
+    /* This uses the standard Bootstrap lines but tints them teal */
+    filter: invert(51%) sepia(38%) saturate(958%) hue-rotate(136deg) brightness(91%) contrast(87%);
     transition: all 0.3s ease-in-out;
+}
+
+/* 2. The Open State (The X) */
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    /* We swap the background to an X only when the .collapsed class is GONE */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(33, 160, 170, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 8l14 14M8 22L22 8'/%3e%3c/svg%3e") !important;
+    filter: none; /* No filter needed since the SVG above is already teal */
+    transform: rotate(90deg);
 }
 /*# sourceMappingURL=bootstrap.css.map */
