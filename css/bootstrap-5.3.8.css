@@ -12300,22 +12300,22 @@ textarea.form-control-lg {
     box-shadow: none;
 }
 
-/* 1. When the menu is OPEN (not collapsed), change the icon to an X */
+/* 1. DEFAULT STATE: The 3 Lines (when menu is closed) */
+/* Bootstrap adds the 'collapsed' class when the menu is shut */
+.navbar-toggler.collapsed .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(33, 160, 170, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    transform: rotate(0deg);
+}
+
+/* 2. OPEN STATE: The X (when menu is open) */
+/* When the 'collapsed' class is REMOVED, show the X */
 .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(33, 160, 170, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 8l14 14M8 22L22 8'/%3e%3c/svg%3e") !important;
-}
-
-/* 2. Keep the icon teal even when open */
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
-    filter: none; /* We don't need the filter because I coded the teal color directly into the SVG above */
-}
-
-/* 3. Optional: Add a smooth rotation effect */
-.navbar-toggler-icon {
-    transition: transform 0.3s ease-in-out;
-}
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
     transform: rotate(90deg);
+}
+
+/* 3. Smooth Transition */
+.navbar-toggler-icon {
+    transition: all 0.3s ease-in-out;
 }
 /*# sourceMappingURL=bootstrap.css.map */
