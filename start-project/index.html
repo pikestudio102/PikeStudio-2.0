@@ -22,18 +22,67 @@
 </div>
   </nav>
 
-<main class="construction-wrapper">
-    <div class="container text-center">
-        <div class="row align-items-center justify-content-center" style="min-height: 60vh;">
-            <div class="col-md-8">
-                <h1 class="display-4 fw-bold teal-text">Coming Soon</h1>
-                <p class="lead text-muted">We are currently working on our <strong>Projects</strong>. Check back soon for updates!</p>
-                <a href="../index.html" class="btn btn-teal mt-3">Back to Home</a>
+	<section class="contact-section py-5">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-4 mb-5">
+                <h1 class="display-5 fw-bold" style="color: #21a0aa;">Let's build something.</h1>
+                <p class="lead text-muted">Ready to take your brand to the next level? Tell us a bit about your project and we'll get back to you within 2 business days.</p>
+                <div class="mt-4">
+                    <p class="mb-1"><strong>Email:</strong></p>
+                    <p><a href="mailto:office@pikestudio.co" class="text-decoration-none" style="color: #21a0aa;">office@pikestudio.co</a></p>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card shadow-sm border-0 p-4" style="border-radius: 15px;">
+                    <form action="https://formspree.io/f/mwvrrpgn" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label required-label">Full Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="Shimon" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label required-label">Email Address</label>
+                                <input type="email" name="email" class="form-control" placeholder="name@email.com" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label class="form-label required-label">Phone Number</label>
+                              <input type="tel" id="phone" name="phone" class="form-control" placeholder="555-000-0000" required maxlength="12">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Current Website <small class="text-muted">(Optional)</small></label>
+                                <input type="url" name="website" class="form-control" placeholder="https://...">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label required-label">What are we working on?</label>
+                                <select name="type" class="form-select" required>
+                                    <option value="" disabled selected>Select a service...</option>
+                                    <option>Branding &amp; Identity</option>
+                                    <option>Graphic Design</option>
+                                    <option>Video Production</option>
+                                    <option>Marketing Strategy</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label">Project Details</label>
+                                <textarea name="message" class="form-control" rows="5" placeholder="Tell us about your goals..."></textarea>
+                            </div>
+
+                            <div class="col-md-12 mt-4">
+                                <button type="submit" class="btn btn-teal w-100 py-3 fw-bold">Submit Inquiry</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</main>
-
+</section>
  <footer class="main-footer">
     <div class="container">
         <div class="row">
@@ -71,5 +120,15 @@
 	
 	<script src="../js/popper-2.11.8.min.js"></script> 
   <script src="../js/bootstrap-5.3.8.js"></script>
+	<script>
+    const phoneInput = document.getElementById('phone');
+
+    phoneInput.addEventListener('input', (e) => {
+        let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        
+        // This logic adds the dashes as the user types: 000-000-0000
+        e.target.value = !x[2] ? x[1] : x[1] + '-' + x[2] + (x[3] ? '-' + x[3] : '');
+    });
+</script>
 </body>
 </html>

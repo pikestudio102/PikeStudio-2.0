@@ -12314,4 +12314,23 @@ textarea.form-control-lg {
     filter: none; /* No filter needed since the SVG above is already teal */
     transform: rotate(90deg);
 }
+
+/* Styling the "Optional" text */
+.text-muted {
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Ensure form inputs have a consistent height */
+.form-control, .form-select {
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+
+/* Adds a red asterisk after any label with this class */
+.required-label::after {
+    content: " *";
+    color: #d9534f; /* Professional red */
+    font-weight: bold;
+}
 /*# sourceMappingURL=bootstrap.css.map */
