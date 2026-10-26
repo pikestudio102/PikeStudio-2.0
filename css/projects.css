@@ -65,6 +65,7 @@
 }
 
 .project-card {
+    position: relative;      /* keeps each card's full-card link inside that card */
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -112,6 +113,40 @@
     line-height: 1.2;
 }
 
+/* Logo version of the image area: an app icon centred on a soft background, with the name underneath */
+.project-thumb-logo {
+    flex-direction: column;
+    gap: 14px;
+    background: linear-gradient(135deg, #f4f2fc, #e4e0f5);
+    color: #6359a9;
+}
+
+.project-thumb .app-icon {
+    position: static;
+    inset: auto;
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 18px rgba(99, 89, 169, 0.35));
+}
+
+.project-thumb-logo .project-thumb-name {
+    font-size: 1.5rem;
+}
+
+.project-hero-media.project-thumb-logo {
+    gap: 22px;
+}
+
+.project-hero-media .app-icon {
+    width: 170px;
+    height: 170px;
+}
+
+.project-hero-media.project-thumb-logo .project-thumb-name {
+    font-size: 2.2rem;
+}
+
 .project-body {
     display: flex;
     flex-direction: column;
@@ -142,6 +177,48 @@
 
 .project-body .project-tags {
     margin-top: auto;
+}
+
+.project-body h2 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Store buttons (iOS / Android). z-index lifts them above the card's full-card link. */
+.store-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 18px;
+    border: 1px solid #21a0aa;
+    border-radius: 50px;
+    background-color: #ffffff;
+    color: #21a0aa;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.store-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    flex: 0 0 auto;
+}
+
+.store-btn:hover,
+.store-btn:focus-visible {
+    background-color: #21a0aa;
+    color: #ffffff;
 }
 
 .project-more {
@@ -282,6 +359,68 @@ html[dir="rtl"] .project-header .project-alt-name {
     width: 100%;
     border-radius: 12px;
     border: 1px solid #e5e5e5;
+}
+
+/* Phone screenshots: one scrollable row, swipe on phones */
+.project-gallery-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+}
+
+.project-gallery-scroll img {
+    flex: 0 0 auto;
+    height: 460px;
+    width: auto;
+    border-radius: 20px;
+    border: 1px solid #e5e5e5;
+    scroll-snap-align: start;
+}
+
+/* Scrollbar in the brand teal (Chrome, Edge, Safari) */
+.project-gallery-scroll::-webkit-scrollbar {
+    height: 10px;
+}
+
+.project-gallery-scroll::-webkit-scrollbar-track {
+    background: #e0eeef;
+    border-radius: 10px;
+}
+
+.project-gallery-scroll::-webkit-scrollbar-thumb {
+    background: #21a0aa;
+    border-radius: 10px;
+}
+
+.project-gallery-scroll::-webkit-scrollbar-thumb:hover {
+    background: #1a838a;
+}
+
+/* Same look in Firefox */
+@supports not selector(::-webkit-scrollbar) {
+    .project-gallery-scroll {
+        scrollbar-width: thin;
+        scrollbar-color: #21a0aa #e0eeef;
+    }
+}
+
+/* Phones and tablets: swipe by hand, no scrollbar shown */
+@media (hover: none) and (pointer: coarse) {
+    .project-gallery-scroll {
+        scrollbar-width: none;
+    }
+
+    .project-gallery-scroll::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .project-gallery-scroll img {
+        height: 380px;
+    }
 }
 
 /* Video embed */
